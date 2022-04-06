@@ -7,10 +7,10 @@ function drawTable( $cols , $rows , $color)
 {
   echo "<table border='1' width='200' background-color = $color>";  
   for ($tr=1 ; $tr <= $rows ; $tr++){
-        $style = ($tr == 1) ? " style='background-color:$color'" : '';
+        $style = " style='background-color:$color'";
         echo '<tr'.$style.' >';
         for($td=1 ; $td <= $cols ; $td++){
-          $style = ($td == 1) ? " style='background-color:$color'" : '';
+          
           echo '<td'.$style.'>'.$tr*$td.'</td>';
         }
         echo '</tr>';
@@ -49,7 +49,7 @@ function drawTable( $cols , $rows , $color)
       <br />
       <label>Цвет: </label>
       <br />
-      <input name='color' type='text' value="" />
+      <input name='color' type='color' value="" />
       <br />
       <br />
       <input type='submit' value='Создать' />
@@ -57,7 +57,7 @@ function drawTable( $cols , $rows , $color)
     <!-- Таблица -->
     <?php 
     $Cols=$_POST["cols"];
-    $Rows=$_POST["rows"];
+    $Rows=$_POST["rows"];  
     $Color=$_POST["color"];
 
     drawTable($Cols , $Rows, $Color) ?>
